@@ -15,22 +15,22 @@
     ga('send', 'pageview');
   </script>
   <script>
-/**
-* Function that tracks a click on an outbound link in Analytics.
-* This function takes a valid URL string as an argument, and uses that URL string
-* as the event label. Setting the transport method to 'beacon' lets the hit be sent
-* using 'navigator.sendBeacon' in browser that support it.
-*/
-var trackOutboundLink = function(url) {
-   ga('send', 'event', 'outbound', 'click', url, {
-     'transport': 'beacon',
-     'hitCallback': function(){document.location = url;}
-   });
-};
-var trackClick = function(target) {
-  ga('send', 'event', 'button', 'click', target);
-};
-</script>
+    /**
+    * Function that tracks a click on an outbound link in Analytics.
+    * This function takes a valid URL string as an argument, and uses that URL string
+    * as the event label. Setting the transport method to 'beacon' lets the hit be sent
+    * using 'navigator.sendBeacon' in browser that support it.
+    */
+    var trackOutboundLink = function(url) {
+       ga('send', 'event', 'outbound', 'click', url, {
+         'transport': 'beacon',
+         'hitCallback': function(){document.location = url;}
+       });
+    };
+    var trackClick = function(target) {
+      ga('send', 'event', 'button', 'click', target);
+    };
+  </script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
       integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -64,7 +64,7 @@ var trackClick = function(target) {
       <ul>
       	<li>Deep breaths</li>
       	<li>A call or text with someone you love</li>
-      	<li><a href="http://cute-babyanimals.com/" onclick="trackOutboundLink('http:/cute-babyanimals.org'); return false;">Cute animals</a></li>
+      	<li><a href="http://cute-babyanimals.com/" onclick="trackOutboundLink('http://cute-babyanimals.com/'); return false;">Cute animals</a></li>
       	<li><a href="http://www.yesmagazine.org/departments/people-we-love"
       	    onclick="trackOutboundLink('http://www.yesmagazine.org/departments/people-we-love'); return false;">Inspiring people</a>
       	 </li>
