@@ -26,6 +26,7 @@
          'transport': 'beacon',
          'hitCallback': function(){document.location = url;}
        });
+      return false;
     };
     var trackClick = function(target) {
       ga('send', 'event', 'button', 'click', target);
@@ -38,23 +39,27 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
-  <h1>WTFTrump</h1>
-  <p>Make the most of this year's WTF moments. What would you like to do today?</p>
-  <div id="buttons" onclick="$('#buttons').hide();">
-    <button type="button" class="btn btn-lg btn-success" onclick="$('#do-something').show(); trackClick('do-something');">Do something</button>
-    <button type="button" class="btn btn-lg btn-danger" onclick="$('#angry-sad').show(); trackClick('angry-sad');">Feel angry-sad</button>
+  <div id="intro" class="text-center">
+    <h1>WTFTrump</h1>
+    <p>Make the most of this year's WTF moments. What would you like to do today?</p>
+    <div id="buttons" onclick="$('#intro').hide();">
+      <button type="button" class="btn btn-lg btn-success" onclick="$('#do-something').show(); trackClick('do-something');">Do something</button>
+      <button type="button" class="btn btn-lg btn-danger" onclick="$('#angry-sad').show(); trackClick('angry-sad');">Feel angry-sad</button>
+    </div>
   </div>
   <div id="do-something" style="display:none">
     <h2>Let's do something</h2>
     <ul>
       <li>
-        Don't leave the election to chance: <a href="https://www.hillaryclinton.com/states/" onclick="trackOutboundLink('https://www.hillaryclinton.com/states/'); return false;">volunteer</a>.
-      	  <ul><li>Don't forget that important decisions are on the ballot beyond just President.
+        Don't leave the election to chance:
+        <a onclick="return trackOutboundLink('https://www.hillaryclinton.com/states/')">
+          volunteer</a>.
+      	<ul><li>Don't forget that important decisions are on the ballot beyond just President.
       	  Getting more people out to vote = more progressive change.</li></ul>
       </li>
       <li>
         Help people people who are building a better world: 
-        <a href="http://www.socialjusticefund.org" onclick="trackOutboundLink('http://www.socialjusticefund.org'); return false;">Social Justice Fund</a>.
+        <a onclick="return trackOutboundLink('http://www.socialjusticefund.org');">Social Justice Fund</a>.
       </li>
     </ul>
   </div>
@@ -64,9 +69,8 @@
       <ul>
       	<li>Deep breaths</li>
       	<li>A call or text with someone you love</li>
-      	<li><a href="http://cute-babyanimals.com/" onclick="trackOutboundLink('http://cute-babyanimals.com/'); return false;">Cute animals</a></li>
-      	<li><a href="http://www.yesmagazine.org/departments/people-we-love"
-      	    onclick="trackOutboundLink('http://www.yesmagazine.org/departments/people-we-love'); return false;">Inspiring people</a>
+      	<li><a onclick="return trackOutboundLink('http://cute-babyanimals.com/');">Cute animals</a></li>
+      	<li><a onclick="return trackOutboundLink('http://www.yesmagazine.org/departments/people-we-love');">Inspiring people</a>
       	 </li>
       </ul>
   </div>
