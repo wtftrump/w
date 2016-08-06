@@ -31,6 +31,9 @@
     var trackClick = function(target) {
       ga('send', 'event', 'button', 'click', target);
     };
+    var enterLeaf = function() {
+      $('#footer').show();
+    }
   </script>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap-theme.min.css">
@@ -44,7 +47,8 @@
     <p>Make the most of this year's WTF moments. What would you like to do today?</p>
     <div id="buttons" onclick="$('#intro').hide();">
       <button type="button" class="btn btn-lg btn-success" onclick="$('#do-something').show(); trackClick('do-something');">Do something</button>
-      <button type="button" class="btn btn-lg btn-danger" onclick="$('#angry-sad').show(); trackClick('angry-sad');">Feel angry-sad</button>
+      <button type="button" class="btn btn-lg btn-danger" onclick="$('#angry-sad').show(); trackClick('angry-sad');enterLeaf()
+      ">Feel angry-sad</button>
     </div>
   </div>
  
@@ -52,11 +56,12 @@
     <h2>Let's do something</h2>
     <p>I want to offer
     <ul onclick="$('#do-something').hide()">
-      <li><a onclick="$('#time').show(); trackClick('time');">Time</a>
-      <li><a onclick="$('#money').show(); trackClick('money');">Money</a>
+      <li><a onclick="$('#time').show(); trackClick('time');enterLeaf();">Time</a>
+      <li><a onclick="$('#money').show(); trackClick('money');enterLeaf();">Money</a>
     </ul>
   </div>
-  <div id="time">
+
+  <div id="time" style="display:none">
     <h2>Time</h2>
     <ul>
       <li>
@@ -69,7 +74,8 @@
           <li>More people out to vote = more progressive change.
     </ul>
   </div>
-  <div id="money">
+
+  <div id="money" style="display:none">
     <h2>Money</h2>
     <ul>
       <li>
@@ -78,17 +84,30 @@
           Social Justice Fund</a>.
     </ul>
   </div>
-</div>
-  
+ 
   <div id="angry-sad" style="display:none">
       <h2>This sucks :(</h2>
       <p>Some things you might like right now...</p>
       <ul>
       	<li>Deep breaths
       	<li>A call or text with someone you love
-      	<li><a onclick="return trackOutboundLink('http://cute-babyanimals.com/');">Cute animals</a>
-      	<li><a onclick="return trackOutboundLink('http://www.yesmagazine.org/departments/people-we-love');">Inspiring people</a> 	 
+      	<li><a onclick="return trackOutboundLink('http://cute-babyanimals.com/');">
+      	    Cute animals</a>
+      	<li><a onclick="return trackOutboundLink('http://www.yesmagazine.org/departments/people-we-love');">
+      	    Inspiring people</a> 	 
       </ul>
   </div>
+  
+  <footer id="footer" class="footer small text-center" style="display: none">
+    <div class="container">
+      <p id="share-cta">Friends suffering from WTF?
+        <br>
+        <a onclick="$('#share-cta').hide();$('#share-url').show();trackClick('share')">Share</a>
+     </p>
+      <p id="share-url" style="display:none">
+        Copy/paste: <a href="http://wtftrump.us">wtftrump.us</a>
+      </p>
+    </div>
+  </footer>
 </body>
 </html>
