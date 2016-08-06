@@ -47,31 +47,47 @@
       <button type="button" class="btn btn-lg btn-danger" onclick="$('#angry-sad').show(); trackClick('angry-sad');">Feel angry-sad</button>
     </div>
   </div>
+ 
   <div id="do-something" style="display:none">
     <h2>Let's do something</h2>
+    <p>I want to offer
+    <ul onclick="$('#do-something').hide()">
+      <li><a onclick="$('#time').show(); trackClick('time');">Time</a>
+      <li><a onclick="$('#money').show(); trackClick('money');">Money</a>
+    </ul>
+  </div>
+  <div id="time">
+    <h2>Time</h2>
     <ul>
       <li>
         Don't leave the election to chance:
         <a onclick="return trackOutboundLink('https://www.hillaryclinton.com/states/')">
           volunteer</a>.
-      	<ul><li>Don't forget that important decisions are on the ballot beyond just President.
-      	  Getting more people out to vote = more progressive change.</li></ul>
-      </li>
-      <li>
-        Help people people who are building a better world: 
-        <a onclick="return trackOutboundLink('http://www.socialjusticefund.org');">Social Justice Fund</a>.
-      </li>
+    	  <ul>
+          <li>Don't forget that important decisions are on the ballot beyond
+              just President.
+          <li>More people out to vote = more progressive change.
     </ul>
   </div>
+  <div id="money">
+    <h2>Money</h2>
+    <ul>
+      <li>
+        Help people people who are building a better world: 
+        <a onclick="return trackOutboundLink('http://www.socialjusticefund.org');">
+          Social Justice Fund</a>.
+    </ul>
+  </div>
+</div>
+  
   <div id="angry-sad" style="display:none">
       <h2>This sucks :(</h2>
       <p>Some things you might like right now...</p>
       <ul>
-      	<li>Deep breaths</li>
-      	<li>A call or text with someone you love</li>
-      	<li><a onclick="return trackOutboundLink('http://cute-babyanimals.com/');">Cute animals</a></li>
-      	<li><a onclick="return trackOutboundLink('http://www.yesmagazine.org/departments/people-we-love');">Inspiring people</a>
-      	 </li>
+      	<li>Deep breaths
+      	<li>A call or text with someone you love
+      	<li><a onclick="return trackOutboundLink('http://cute-babyanimals.com/');">Cute animals</a>
+      	<li><a onclick="return trackOutboundLink('http://www.yesmagazine.org/departments/people-we-love');">Inspiring people</a> 	 
       </ul>
   </div>
 </body>
